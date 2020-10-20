@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <title></title>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta charset="utf-8">
+    
+      <title>Homework Assignment 1</title>
+
+    <style>
+      .flexbox {
+        display: flex;
+        flex-direction: row;
+        background-color: aquamarine;
+        justify-content: space-between;
+        align-content: center;
+        padding: 20px;
+        
+      }
+
+    @media (max-width: 800px) {
+    .flexbox {
+      flex-direction: column;
+  }
+}
+
+li  {
+  font-size: 20px;
+  font-weight: bolder;
+  color: darkmagenta;
+}
+
+    </style>
+      
+  </head>
+
+  <!--Content-->
+  <body>
+    <h1>Exploring to FavShoes</h1> 
+    <div><button id="clickMe">Looking for your favourite shoes?</button></div>
+<br>
+    <div class="flexbox">
+        <div id="shoes"><img src="images/sneaker-1.jpg" width="300" height="200"></div>
+        <div id="shoes"><img src="images/sneaker-2.jpg" width="300" height="200"></div>
+        <div id="shoes"><img src="images/sneaker-3.jpg" width="300" height="200"></div>
+        <div id="shoes"><img src="images/sandal-1.jpg" width="300" height="200"></div>
+        <div id="shoes"><img src="images/sandal-2.jpg" width="300" height="200"></div>
+        <div id="shoes"><img src="images/sandal-3.jpg" width="300" height="200"></div>
+</div>
+
+<div id="shoesBrand">
+  <ul>
+    <li>Sneaker Brands
+      <ul>
+        <li>Adidas</li>
+        <li>Converse</li>
+        <li>Nike</li>
+      </ul>
+    </li><br>
+    <li>Sandal Brands
+      <ul>
+        <li>Naturalizer</li>
+        <li>Roxy</li>
+        <li>Steve Madden</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<script src="jquery-3.5.1.min.js"></script>
+
+<script>
+
+    $(document).ready(function() {
+         $('#clickMe').click(function() {
+  alert('Thank you for shopping with FavShoes! We only sell comfortable sneakers and sandals here!');
+         });
+     });
+
+     $('body').children ('h1').css({
+        'background-color': 'purple',
+        'color': 'white',
+        'font-size': '50px',
+        'padding': '40px',
+    });
+
+    $("img").click(function(){
+    $("img").animate({
+      left: '250px',
+      height: '+=150px',
+      width: '+=150px'
+    });
+  });
+
+  function handler( event ) {
+  var target = $( event.target );
+  if ( target.is( "li" ) ) {
+    target.children().toggle();
+    }
+  }
+$( "ul" ).click( handler ).find( "ul" ).hide();
+
+
+</script>
+
+  </body>  
+</html>
